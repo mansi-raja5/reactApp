@@ -4,6 +4,8 @@ class App extends React.Component{
 	constructor(){
 		super();
 		this.state = {
+			 header: "Header from state...",
+			 content: "Content from state...",			
 			data : 
 			[
 				{
@@ -34,6 +36,8 @@ class App extends React.Component{
 		
 		return(
 			<div>
+				<h1>{this.state.header}</h1>
+				<h1>{this.state.content}</h1>
 				<h1>{this.props.headerProp}</h1>
 				<h1>{this.props.contentProp}</h1>
 				<h1>{this.props.mansiProp}</h1>
