@@ -5,11 +5,11 @@ var config = {
       filename: 'index.js',
    },
    devServer: {
-      inline: true,
+      inline: false,
       port: 8080
    },
    module: {
-      loaders: [
+      rules: [
          {
             test: /\.jsx?$/,
             exclude: /node_modules/,
