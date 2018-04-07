@@ -1,26 +1,29 @@
 import React from 'react';
 
-class Header extends React.Component{
-	render(){
-		return(
-			<div>
-					<h1> This is react header component </h1>
-			</div>
-		);
-	}
-}
-
-class Content extends React.Component{
-	render(){
-		return(
-			<div>
-					<h1> This is react content component </h1>
-			</div>
-		);
-	}
-}
-
 class App extends React.Component{
+	constructor(){
+		super();
+		this.state = {
+			data : 
+			[
+				{
+					"id":1,
+					"name":"Foo",
+					"age":10
+				},
+				{
+					"id":2,
+					"name":"bar",
+					"age":20
+				},
+				{
+					"id":3,
+					"name":"baz",
+					"age":30
+				},				
+			]
+		}
+	}
 	render(){
 		var i = 1;
 		
@@ -32,6 +35,13 @@ class App extends React.Component{
 		return(
 			<div>
 				<Header/>
+				<table>
+					<tbody>
+					{this.state.data.map(
+						(person,i) => <TableRaw key={i} data = {person} />
+					)}
+					</tbody>
+				</table>
 				<Content/>
 				<h1 style = {myStyle}>Header</h1>
 				<h2>Content</h2>
@@ -50,4 +60,37 @@ class App extends React.Component{
 		);
 	}
 }
+
+class Header extends React.Component{
+	render(){
+		return(
+			<div>
+					<h1> This is react header component </h1>
+			</div>
+		);
+	}
+}
+
+class TableRaw extends React.Component{
+	render(){
+		return(
+			<tr>
+				<td>{this.props.data.id}</td>
+				<td>{this.props.data.name}</td>
+				<td>{this.props.data.age}</td>
+			</tr>
+		);
+	}
+}
+
+class Content extends React.Component{
+	render(){
+		return(
+			<div>
+					<h1> This is react content component </h1>
+			</div>
+		);
+	}
+}
+
 export default App;
