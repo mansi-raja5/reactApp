@@ -34,6 +34,10 @@ class App extends React.Component{
 		
 		return(
 			<div>
+				<h1>{this.props.headerProp}</h1>
+				<h1>{this.props.contentProp}</h1>
+				<h1>{this.props.mansiProp}</h1>
+				<h1>{this.props.jigarProp}</h1>
 				<Header/>
 				<table>
 					<tbody>
@@ -91,6 +95,11 @@ class Content extends React.Component{
 			</div>
 		);
 	}
+}
+
+App.defaultProps = {
+	mansiProp: "Mansi from props...",
+    jigarProp:"Jigar from props..."
 }
 
 export default App;
