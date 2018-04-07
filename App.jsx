@@ -12,6 +12,10 @@ class App extends React.Component{
 		return(
 			<div>
 				<h1 style = {myStyle}>Header</h1>
+					{// End of header part and this is single line comment in React Component}
+					{/* this is multi
+						line comment in 
+						React Component */}
 				<h2>Content</h2>
 				<p data-myattribute = "somevalue">This is the content!!!</p>
 				Hello World!
