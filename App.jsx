@@ -1,11 +1,11 @@
 import React from 'react';
 
 class App extends React.Component{
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state = {
-			 header: "Header from state...",
-			 content: "Content from state...",			
+			 header: "Header from state and passed as a props...",
+			 content: "Content from state and passed as a props...",			
 			data : 
 			[
 				{
@@ -42,7 +42,7 @@ class App extends React.Component{
 				<h1>{this.props.contentProp}</h1>
 				<h1>{this.props.mansiProp}</h1>
 				<h1>{this.props.jigarProp}</h1>
-				<Header/>
+				<Header headerProp = {this.state.header}/>
 				<table>
 					<tbody>
 					{this.state.data.map(
@@ -50,7 +50,7 @@ class App extends React.Component{
 					)}
 					</tbody>
 				</table>
-				<Content/>
+				<Content contentProp = {this.state.content}/>
 				<h1 style = {myStyle}>Header</h1>
 				<h2>Content</h2>
 				<p data-myattribute = "somevalue">This is the content!!!</p>
@@ -73,7 +73,7 @@ class Header extends React.Component{
 	render(){
 		return(
 			<div>
-					<h1> This is react header component </h1>
+					<h1> {this.props.headerProp} </h1>
 			</div>
 		);
 	}
@@ -95,7 +95,7 @@ class Content extends React.Component{
 	render(){
 		return(
 			<div>
-					<h1> This is react content component </h1>
+					<h1> {this.props.contentProp} </h1>
 			</div>
 		);
 	}
