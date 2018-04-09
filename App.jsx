@@ -123,6 +123,8 @@ class App extends React.Component{
                 <br/>
                 <button onClick={this.findDomNodeHandler}>Set Dom Node to green color</button>
                 <div id="myDiv"> DOM NODE</div>
+                =================================================
+                <br/>
 			</div>
 		);
 	}
