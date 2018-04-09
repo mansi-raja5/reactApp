@@ -29,9 +29,10 @@ class App extends React.Component{
             myData : [],
             mansi : 0
 		}
-		this.setStateHandler = this.setStateHandler.bind(this);
-		this.mansiClickEvent = this.mansiClickEvent.bind(this);
+		this.setStateHandler    = this.setStateHandler.bind(this);
+		this.mansiClickEvent    = this.mansiClickEvent.bind(this);
 		this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+        this.findDomNodeHandler = this.findDomNodeHandler.bind(this);
 	};
     setStateHandler(){
         var item = "setState..."
@@ -46,6 +47,11 @@ class App extends React.Component{
     };
     forceUpdateHandler(){
         this.forceUpdate();
+    };
+    findDomNodeHandler(){
+        var myDiv = document.getElementById('myDiv');
+        ReactDOM.findDOMNode(myDiv).style.color = 'green';
+        ReactDOM.findDOMNode(myDiv).style.backgroundColor = "red";
     };
 	render(){
 		var i = 1;
@@ -113,6 +119,10 @@ class App extends React.Component{
                 <h4>Random Number : {Math.random()}</h4>
                 <h4>Random Number : {Math.random()}</h4>
                 <h4>Random Number : {Math.random()}</h4>
+                =================================================
+                <br/>
+                <button onClick={this.findDomNodeHandler}>Set Dom Node to green color</button>
+                <div id="myDiv"> DOM NODE</div>
 			</div>
 		);
 	}
