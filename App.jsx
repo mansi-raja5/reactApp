@@ -31,6 +31,7 @@ class App extends React.Component{
 		}
 		this.setStateHandler = this.setStateHandler.bind(this);
 		this.mansiClickEvent = this.mansiClickEvent.bind(this);
+		this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
 	};
     setStateHandler(){
         var item = "setState..."
@@ -42,6 +43,9 @@ class App extends React.Component{
         var mInc = this.state.mansi;
         mInc++;
         this.setState({mansi:mInc})
+    };
+    forceUpdateHandler(){
+        this.forceUpdate();
     };
 	render(){
 		var i = 1;
@@ -98,13 +102,17 @@ class App extends React.Component{
                 <br/>
                 <button onClick = {this.setStateHandler}>SET STATE</button>
                 <h4>State Array: {this.state.myData}</h4>
+                <h4>Random Number : {Math.random()}</h4>
                 =================================================
                 <br/>
                 <button onClick = {this.mansiClickEvent}>Mansi Click</button>
                 <h4>Mansi Value: {this.state.mansi}</h4>
                 =================================================
                 <br/>
-
+                <button onClick={this.forceUpdateHandler}>FORCE UPDATE</button>
+                <h4>Random Number : {Math.random()}</h4>
+                <h4>Random Number : {Math.random()}</h4>
+                <h4>Random Number : {Math.random()}</h4>
 			</div>
 		);
 	}
